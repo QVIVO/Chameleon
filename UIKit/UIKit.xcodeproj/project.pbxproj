@@ -1248,7 +1248,6 @@
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "@executable_path/../Frameworks";
 				PRODUCT_NAME = UIKit;
-				SYMROOT = ../build;
 				VALID_ARCHS = "i386 x86_64";
 				WRAPPER_EXTENSION = framework;
 			};
@@ -1269,7 +1268,6 @@
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "@executable_path/../Frameworks";
 				PRODUCT_NAME = UIKit;
-				SYMROOT = ../build;
 				VALID_ARCHS = "i386 x86_64";
 				WRAPPER_EXTENSION = framework;
 			};
@@ -1285,8 +1283,9 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
-				ONLY_ACTIVE_ARCH = YES;
+				OBJROOT = "$(SYMROOT)/build";
 				SDKROOT = macosx;
+				SYMROOT = "$(QVIVO_OUTPUT)";
 			};
 			name = Debug;
 		};
@@ -1300,8 +1299,10 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				OBJROOT = "$(SYMROOT)/build";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = macosx;
+				SYMROOT = "$(QVIVO_OUTPUT)";
 			};
 			name = Release;
 		};
