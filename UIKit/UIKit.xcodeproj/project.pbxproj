@@ -1288,7 +1288,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				OBJROOT = "$(SYMROOT)/build";
-				SDKROOT = macosx;
+				SDKROOT = macosx10.6;
 				SYMROOT = "$(QVIVO_OUTPUT)";
 			};
 			name = Debug;
@@ -1303,7 +1303,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				OBJROOT = "$(SYMROOT)/build";
-				SDKROOT = macosx;
+				SDKROOT = macosx10.6;
 				SYMROOT = "$(QVIVO_OUTPUT)";
 			};
 			name = Release;
