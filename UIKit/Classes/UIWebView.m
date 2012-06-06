@@ -212,4 +212,14 @@
     return [NSArray array];
 }
 
+- (BOOL)webViewIsResizeable:(WebView *)sender
+{
+    return NO;
+}
+
+- (void)webView:(WebView *)sender setFrame:(NSRect)frame
+{
+    // DO NOTHING to prevent WebView resize window
+}
+
 @end
