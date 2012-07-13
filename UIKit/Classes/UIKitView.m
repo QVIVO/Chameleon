@@ -42,13 +42,26 @@
 {
     [self setWantsLayer:YES];
 
-    CALayer *screenLayer = [_screen _layer];
     CALayer *myLayer = [self layer];
+    myLayer.delegate = self;
     
-    [myLayer addSublayer:screenLayer];
+    CALayer *screenLayer = [_screen _layer];
     screenLayer.frame = myLayer.bounds;
     screenLayer.autoresizingMask = kCALayerWidthSizable | kCALayerHeightSizable;
-    myLayer.geometryFlipped = YES;
+    
+    //deal with 10.8 geometry differences.
+    if (myLayer.geometryFlipped == screenLayer.geometryFlipped) {
+        //<10.8
+        CALayer* geometryAdapterLayer = [CALayer layer];
+        geometryAdapterLayer.frame = myLayer.bounds;
+        geometryAdapterLayer.autoresizingMask = kCALayerWidthSizable | kCALayerHeightSizable;
+        geometryAdapterLayer.geometryFlipped = YES;
+        [geometryAdapterLayer addSublayer:screenLayer];
+        [myLayer addSublayer:geometryAdapterLayer];
+    } else {
+        //10.8
+        [myLayer addSublayer:screenLayer];
+    }
 }
 
 - (id)initWithFrame:(NSRect)frame
