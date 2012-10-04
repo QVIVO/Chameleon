@@ -33,7 +33,32 @@
 
 @implementation UIColor (UIColorSystemColors)
 
++ (UIColor *)lightTextColor
+{
+    return [UIColor lightGrayColor];    // this is currently not likely to be correct, please fix!
+}
+
++ (UIColor *)darkTextColor
+{
+    return [UIColor darkGrayColor];    // this is currently not likely to be correct, please fix!
+}
+
 + (UIColor *)groupTableViewBackgroundColor
+{
+    return [UIColor lightGrayColor];    // this is currently not likely to be correct, please fix!
+}
+
++ (UIColor *)viewFlipsideBackgroundColor
+{
+    return [UIColor lightGrayColor];    // this is currently not likely to be correct, please fix!    
+}
+
++ (UIColor *)scrollViewTexturedBackgroundColor
+{
+    return [UIColor whiteColor];    // this is currently not likely to be correct, please fix!
+}
+
++ (UIColor *)underPageBackgroundColor
 {
     return [UIColor lightGrayColor];    // this is currently not likely to be correct, please fix!
 }

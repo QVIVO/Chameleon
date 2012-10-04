@@ -30,6 +30,11 @@
 #import "UIToolbar.h"
 #import "UIView.h"
 
+typedef NS_ENUM(NSInteger, UIBarMetrics) {
+    UIBarMetricsDefault,
+    UIBarMetricsLandscapePhone,
+};
+
 @class UIColor, UINavigationItem, UINavigationBar;
 
 @protocol UINavigationBarDelegate <NSObject>
@@ -74,5 +79,29 @@
 @property (nonatomic, readonly, retain) UINavigationItem *backItem;
 @property (nonatomic, copy) NSArray *items;
 @property (nonatomic, assign) id delegate;
+@property(nonatomic,assign,getter=isTranslucent) BOOL translucent; // Default is NO. Always YES if barStyle is set to UIBarStyleBlackTranslucent
+
+/* In general, you should specify a value for the normal state to be used by other states which don't have a custom value set.
+ 
+ Similarly, when a property is dependent on the bar metrics (on the iPhone in landscape orientation, bars have a different height from standard), be sure to specify a value for UIBarMetricsDefault.
+ 
+ DISCUSSION: Interdependence of barStyle, tintColor, backgroundImage.
+ When barStyle or tintColor is set as well as the bar's background image,
+ the bar buttons (unless otherwise customized) will inherit the underlying
+ barStyle or tintColor.
+ */
+- (void)setBackgroundImage:(UIImage *)backgroundImage forBarMetrics:(UIBarMetrics)barMetrics UI_APPEARANCE_SELECTOR;
+- (UIImage *)backgroundImageForBarMetrics:(UIBarMetrics)barMetrics UI_APPEARANCE_SELECTOR;
+
+/* Default is nil. When non-nil, a custom shadow image to show instead of the default shadow image. For a custom shadow to be shown, a custom background image must also be set with -setBackgroundImage:forBarMetrics: (if the default background image is used, the default shadow image will be used).
+ */
+@property(nonatomic,retain) UIImage *shadowImage UI_APPEARANCE_SELECTOR;
+
+/* You may specify the font, text color, text shadow color, and text shadow offset for the title in the text attributes dictionary, using the keys found in UIStringDrawing.h.
+ */
+@property(nonatomic,copy) NSDictionary *titleTextAttributes UI_APPEARANCE_SELECTOR;
+
+- (void)setTitleVerticalPositionAdjustment:(CGFloat)adjustment forBarMetrics:(UIBarMetrics)barMetrics UI_APPEARANCE_SELECTOR;
+- (CGFloat)titleVerticalPositionAdjustmentForBarMetrics:(UIBarMetrics)barMetrics UI_APPEARANCE_SELECTOR;
 
 @end

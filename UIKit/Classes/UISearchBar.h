@@ -49,6 +49,7 @@
 @property (nonatomic,assign) id<UISearchBarDelegate> delegate;
 @property (nonatomic) BOOL showsCancelButton;
 @property (nonatomic,copy) NSString *placeholder;
+@property (nonatomic,retain) UIColor *tintColor;             // default is nil
 
 @end
 

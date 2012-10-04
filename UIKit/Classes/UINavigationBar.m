@@ -399,4 +399,25 @@ typedef enum {
     UIRectFill(bounds);
 }
 
+- (void)setBackgroundImage:(UIImage *)backgroundImage forBarMetrics:(UIBarMetrics)barMetrics UI_APPEARANCE_SELECTOR
+{
+    return; // not implement, please fix
+}
+
+- (UIImage *)backgroundImageForBarMetrics:(UIBarMetrics)barMetrics UI_APPEARANCE_SELECTOR
+{
+    return nil; // not implement, please fix
+}
+
+- (void)setTitleVerticalPositionAdjustment:(CGFloat)adjustment forBarMetrics:(UIBarMetrics)barMetrics UI_APPEARANCE_SELECTOR
+{
+    return; // not implement, please fix
+}
+
+- (CGFloat)titleVerticalPositionAdjustmentForBarMetrics:(UIBarMetrics)barMetrics UI_APPEARANCE_SELECTOR
+{
+    return 0; // not implement, please fix
+}
+
+
 @end

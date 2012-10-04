@@ -32,6 +32,7 @@
 
 static NSString *UIFontSystemFontName = nil;
 static NSString *UIFontBoldSystemFontName = nil;
+static NSString *UIFontItalicSystemFontName = nil;
 
 @implementation UIFont
 
@@ -45,6 +46,12 @@ static NSString *UIFontBoldSystemFontName = nil;
 {
     [UIFontBoldSystemFontName release];
     UIFontBoldSystemFontName = [aName copy];
+}
+
++ (void)setItalicSystemFontName:(NSString *)aName
+{
+    [UIFontItalicSystemFontName release];
+    UIFontItalicSystemFontName = [aName copy];
 }
 
 + (UIFont *)_fontWithCTFont:(CTFontRef)aFont
@@ -135,6 +142,12 @@ static NSArray *_getFontCollectionNames(CTFontCollectionRef collection, CFString
 {
     NSFont *systemFont = UIFontBoldSystemFontName? [NSFont fontWithName:UIFontBoldSystemFontName size:fontSize] : [NSFont boldSystemFontOfSize:fontSize];
     return [self fontWithNSFont:systemFont];
+}
+
++ (UIFont *)italicSystemFontOfSize:(CGFloat)fontSize
+{
+    NSFont *systemFont = UIFontItalicSystemFontName? [NSFont fontWithName:UIFontItalicSystemFontName size:fontSize] : [NSFont boldSystemFontOfSize:fontSize];
+    return [self fontWithNSFont:systemFont];    
 }
 
 - (void)dealloc
