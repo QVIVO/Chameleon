@@ -54,6 +54,7 @@ typedef enum {
 
 @implementation UINavigationBar
 @synthesize tintColor=_tintColor, delegate=_delegate, items=_navStack;
+@synthesize translucent=_translucent, shadowImage = _shadowImage, titleTextAttributes = _titleTextAttributes;
 
 + (void)_setBarButtonSize:(UIView *)view
 {

@@ -50,6 +50,9 @@ typedef NS_ENUM(NSInteger, UIBarMetrics) {
     NSMutableArray *_navStack;
     UIColor *_tintColor;
     __unsafe_unretained id _delegate;
+    BOOL _translucent;
+    UIImage *_shadowImage;
+    NSDictionary *_titleTextAttributes;
     
     UIView *_leftView;
     UIView *_centerView;

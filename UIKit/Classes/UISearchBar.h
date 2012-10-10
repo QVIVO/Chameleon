@@ -43,6 +43,7 @@
     BOOL _showsCancelButton;
     __unsafe_unretained id<UISearchBarDelegate> _delegate;
     NSString *_placeholder;
+    UIColor *_tintColor;
 }
 
 @property (nonatomic, copy) NSString *text;

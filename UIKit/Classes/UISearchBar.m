@@ -36,7 +36,7 @@
 #import "UISearchBar.h"
 
 @implementation UISearchBar
-@synthesize delegate=_delegate, showsCancelButton = _showsCancelButton, placeholder=_placeholder;
+@synthesize delegate=_delegate, showsCancelButton = _showsCancelButton, placeholder=_placeholder, tintColor = _tintColor;
 
 - (id)initWithFrame:(CGRect)frame
 {
