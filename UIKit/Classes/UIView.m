@@ -800,16 +800,22 @@ static BOOL _animationsEnabled = YES;
     }
     
     if (scale > 0 && scale != self.contentScaleFactor) {
+#if MAC_OS_X_VERSION_MAX_ALLOWED > MAC_OS_X_VERSION_10_6
         if ([_layer respondsToSelector:@selector(setContentsScale:)]) {
             [_layer setContentsScale:scale];
             [self setNeedsDisplay];
         }
+#endif
     }
 }
 
 - (CGFloat)contentScaleFactor
 {
+#if MAC_OS_X_VERSION_MAX_ALLOWED > MAC_OS_X_VERSION_10_6
     return [_layer respondsToSelector:@selector(contentsScale)]? [_layer contentsScale] : 1;
+#else
+    return 1;
+#endif
 }
 
 - (void)setHidden:(BOOL)h

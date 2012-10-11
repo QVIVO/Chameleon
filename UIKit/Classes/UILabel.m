@@ -32,6 +32,7 @@
 #import "UIFont.h"
 #import "UIGraphics.h"
 #import <AppKit/NSApplication.h>
+#import "AppKitIntegration.h"
 
 @implementation UILabel
 @synthesize text=_text, font=_font, textColor=_textColor, textAlignment=_textAlignment, lineBreakMode=_lineBreakMode, enabled=_enabled;

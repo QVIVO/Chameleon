@@ -30,10 +30,17 @@
 #import "UIToolbar.h"
 #import "UIView.h"
 
+#if MAC_OS_X_VERSION_MAX_ALLOWED <= MAC_OS_X_VERSION_10_7
+typedef enum {
+    UIBarMetricsDefault,
+    UIBarMetricsLandscapePhone,
+} UIBarMetrics;
+#else
 typedef NS_ENUM(NSInteger, UIBarMetrics) {
     UIBarMetricsDefault,
     UIBarMetricsLandscapePhone,
 };
+#endif
 
 @class UIColor, UINavigationItem, UINavigationBar;
 
