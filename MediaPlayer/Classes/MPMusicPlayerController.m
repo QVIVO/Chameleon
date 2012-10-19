@@ -30,7 +30,7 @@
 #import "MPMusicPlayerController.h"
 
 NSString *const MPMusicPlayerControllerPlaybackStateDidChangeNotification = @"MPMusicPlayerControllerPlaybackStateDidChangeNotification";
-
+NSString * const MPMediaPlaybackIsPreparedToPlayDidChangeNotification = @"MPMediaPlaybackIsPreparedToPlayDidChangeNotification";
 @implementation MPMusicPlayerController
 
 + (MPMusicPlayerController *)iPodMusicPlayer
