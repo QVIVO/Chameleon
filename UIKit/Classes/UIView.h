@@ -99,7 +99,7 @@ typedef NSUInteger UIViewAnimationOptions;
 
 @class UIColor, CALayer, UIViewController, UIGestureRecognizer;
 
-@interface UIView : UIResponder <UIAppearanceContainer, UIAppearance> {
+@interface UIView : UIResponder <UIAppearanceContainer, UIAppearance, NSCoding> {
 @private
     UIView *_superview;
     NSMutableSet *_subviews;
@@ -122,7 +122,6 @@ typedef NSUInteger UIViewAnimationOptions;
 + (Class)layerClass;
 
 - (id)initWithFrame:(CGRect)frame;
-- (id)initwithCoder:(NSCoder *)coder;
 - (void)addSubview:(UIView *)subview;
 - (void)insertSubview:(UIView *)subview atIndex:(NSInteger)index;
 - (void)insertSubview:(UIView *)subview belowSubview:(UIView *)below;

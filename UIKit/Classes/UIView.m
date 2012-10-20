@@ -104,8 +104,13 @@ static BOOL _animationsEnabled = YES;
 
 - (id)initwithCoder:(NSCoder *)coder
 {
-    NSLog(@"Not implemented.");
+    NSLog(@"[CHAMELEON] UIView initWithCoder is not implemented.");
     return nil;
+}
+
+- (void)encodeWithCoder:(NSCoder *)aCoder
+{
+    NSLog(@"[CHAMELEON] UIView encodeWithCoder is not implemented.");
 }
 
 - (void)dealloc
