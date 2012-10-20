@@ -162,49 +162,49 @@
 
 - (void)drawTextInRect:(CGRect)rect
 {
+    CGContextSaveGState(UIGraphicsGetCurrentContext());
+    
+    const CGRect bounds = self.bounds;
+    CGRect drawRect = CGRectZero;
+    
+    // find out the actual size of the text given the size of our bounds
+    CGSize maxSize = bounds.size;
+    if (_numberOfLines > 0) {
+        maxSize.height = _font.lineHeight * _numberOfLines;
+    }
+    drawRect.size = [_text sizeWithFont:_font constrainedToSize:maxSize lineBreakMode:_lineBreakMode];
+    
+    // now vertically center it
+    drawRect.origin.y = roundf((bounds.size.height - drawRect.size.height) / 2.f);
+    
+    // now position it correctly for the width
+    // this might be cheating somehow and not how the real thing does it...
+    // I didn't spend a ton of time investigating the sizes that it sends the drawTextInRect: method
+    drawRect.origin.x = 0;
+    drawRect.size.width = bounds.size.width;
+    
+    // if there's a shadow, let's set that up
+    CGSize offset = _shadowOffset;
+    
+    // stupid version compatibilities..
+    if (floorf(NSAppKitVersionNumber) <= NSAppKitVersionNumber10_6) {
+        offset.height *= -1;
+    }
+    
+    CGContextSetShadowWithColor(UIGraphicsGetCurrentContext(), offset, 0, _shadowColor.CGColor);
+    
+    // finally, draw the real label
+    UIColor *drawColor = (_highlighted && _highlightedTextColor)? _highlightedTextColor : _textColor;
+    [drawColor setFill];
     [_text drawInRect:rect withFont:_font lineBreakMode:_lineBreakMode alignment:_textAlignment];
+    
+    CGContextRestoreGState(UIGraphicsGetCurrentContext());
 }
 
 - (void)drawRect:(CGRect)rect
 {
     if ([_text length] > 0) {
-        CGContextSaveGState(UIGraphicsGetCurrentContext());
-        
-        const CGRect bounds = self.bounds;
-        CGRect drawRect = CGRectZero;
-        
-        // find out the actual size of the text given the size of our bounds
-        CGSize maxSize = bounds.size;
-        if (_numberOfLines > 0) {
-            maxSize.height = _font.lineHeight * _numberOfLines;
-        }
-        drawRect.size = [_text sizeWithFont:_font constrainedToSize:maxSize lineBreakMode:_lineBreakMode];
-
-        // now vertically center it
-        drawRect.origin.y = roundf((bounds.size.height - drawRect.size.height) / 2.f);
-        
-        // now position it correctly for the width
-        // this might be cheating somehow and not how the real thing does it...
-        // I didn't spend a ton of time investigating the sizes that it sends the drawTextInRect: method
-        drawRect.origin.x = 0;
-        drawRect.size.width = bounds.size.width;
-        
-        // if there's a shadow, let's set that up
-        CGSize offset = _shadowOffset;
-
-        // stupid version compatibilities..
-        if (floorf(NSAppKitVersionNumber) <= NSAppKitVersionNumber10_6) {
-            offset.height *= -1;
-        }
-        
-        CGContextSetShadowWithColor(UIGraphicsGetCurrentContext(), offset, 0, _shadowColor.CGColor);
-        
-        // finally, draw the real label
-        UIColor *drawColor = (_highlighted && _highlightedTextColor)? _highlightedTextColor : _textColor;
-        [drawColor setFill];
-        [self drawTextInRect:drawRect];
-        
-        CGContextRestoreGState(UIGraphicsGetCurrentContext());
+        [self drawTextInRect:rect];
     }
 }
 
