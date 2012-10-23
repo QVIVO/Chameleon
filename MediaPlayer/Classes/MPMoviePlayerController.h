@@ -79,9 +79,10 @@ extern NSString *const MPMovieDurationAvailableNotification;
 {
 @private
     UIInternalMovieView *movieView;
-    
     QTMovie *movie;
+    BOOL _shouldAutoplay;
 }
+
 @property (nonatomic, readonly) UIView *view;
 @property (nonatomic, readonly) MPMovieLoadState loadState;
 @property (nonatomic, copy) NSURL *contentURL;
@@ -95,7 +96,7 @@ extern NSString *const MPMovieDurationAvailableNotification;
 @property (nonatomic) MPMovieRepeatMode repeatMode;
 
 // Indicates if a movie should automatically start playback when it is likely to finish uninterrupted based on e.g. network conditions. Defaults to YES.
-@property(nonatomic) BOOL shouldAutoplay;
+@property (nonatomic) BOOL shouldAutoplay;
 
 @property (nonatomic, readonly) NSTimeInterval duration;
 @property (nonatomic) MPMovieScalingMode scalingMode;

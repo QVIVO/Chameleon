@@ -164,6 +164,16 @@ NSString *const MPMovieDurationAvailableNotification = @"MPMovieDurationAvailabl
         
     [[NSNotificationCenter defaultCenter] postNotificationName: MPMoviePlayerLoadStateDidChangeNotification
                                                         object: self];
+    
+    if (self.loadState >= MPMovieLoadStatePlayable) {
+        if (!movieView) {
+            movieView = [[UIInternalMovieView alloc] initWithMovie: movie];
+        }
+        
+        if (self.shouldAutoplay) {
+            [self play];
+        }
+    }
 }
 
 #pragma mark - constructor/destructor
@@ -181,11 +191,21 @@ NSString *const MPMovieDurationAvailableNotification = @"MPMovieDurationAvailabl
         _movieSourceType = MPMovieSourceTypeUnknown;
         _playbackState = MPMoviePlaybackStateStopped;
         _repeatMode = MPMovieRepeatModeNone;
+        _shouldAutoplay = YES;
         
+        NSDictionary *attrs = [NSDictionary dictionaryWithObjectsAndKeys:
+                               url, QTMovieURLAttribute,
+                               [NSNumber numberWithBool:YES], QTMovieOpenForPlaybackAttribute ,
+//                               [NSNumber numberWithBool:YES], QTMovieOpenAsyncRequiredAttribute,
+//                               [NSNumber numberWithBool:YES], QTMovieOpenAsyncOKAttribute,
+                               nil];
         NSError *error = nil;
-        movie = [[QTMovie alloc] initWithURL: url
-                                       error: &error];
-        
+//        movie = [[QTMovie alloc] initWithURL:url error:&error];
+        movie = [[QTMovie alloc] initWithAttributes:attrs error:&error];
+//        [self loadStateChangeOccurred:nil];
+        if (error) {
+            NSLog(@"woo! error: %@", error);
+        }
         movieView = [[UIInternalMovieView alloc] initWithMovie: movie];
         
         self.scalingMode = MPMovieScalingModeAspectFit;
@@ -222,7 +242,8 @@ NSString *const MPMovieDurationAvailableNotification = @"MPMovieDurationAvailabl
 //
 - (void)play
 {
-    [movie play];
+//    [movie play];
+    [movie setRate:1.0f];
     _playbackState = MPMoviePlaybackStatePlaying;
 }
 
@@ -251,9 +272,9 @@ NSString *const MPMovieDurationAvailableNotification = @"MPMovieDurationAvailabl
 
 #pragma mark - Pending
 
-- (void) setShouldAutoplay:(BOOL)shouldAutoplay {
-    NSLog(@"[CHAMELEON] MPMoviePlayerController.shouldAutoplay not implemented");
-}
+//- (void) setShouldAutoplay:(BOOL)shouldAutoplay {
+//    NSLog(@"[CHAMELEON] MPMoviePlayerController.shouldAutoplay not implemented");
+//}
 
 - (UIView*) backgroundView {
     NSLog(@"[CHAMELEON] MPMoviePlayerController.backgroundView not implemented");
