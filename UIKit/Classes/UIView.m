@@ -102,7 +102,7 @@ static BOOL _animationsEnabled = YES;
     return self;
 }
 
-- (id)initwithCoder:(NSCoder *)coder
+- (id)initWithCoder:(NSCoder *)coder
 {
     NSLog(@"[CHAMELEON] UIView initWithCoder is not implemented.");
     return nil;
