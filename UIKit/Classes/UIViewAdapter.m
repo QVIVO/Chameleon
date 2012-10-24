@@ -81,6 +81,9 @@
 
 - (void)_addNSView
 {
+    //deal with 10.8 geometry differences.
+    self.geometryFlipped = [[[[containerView window].screen UIKitView] layer] isGeometryFlipped];
+
     [_clipView scrollToPoint:NSPointFromCGPoint(self.contentOffset)];
     
     [[self.window.screen UIKitView] addSubview:_clipView];
