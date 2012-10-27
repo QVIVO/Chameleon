@@ -41,3 +41,5 @@
 {
 }
 @end
+
+NSString * const UINibExternalObjects = @"UINibExternalObjects";

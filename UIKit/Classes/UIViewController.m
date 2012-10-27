@@ -52,6 +52,17 @@
     return [self initWithNibName:nil bundle:nil];
 }
 
+- (id)initWithCoder:(NSCoder *)coder
+{
+    NSLog(@"[CHAMELEON] UIView initWithCoder is not implemented.");
+    return nil;
+}
+
+- (void)encodeWithCoder:(NSCoder *)aCoder
+{
+    NSLog(@"[CHAMELEON] UIView encodeWithCoder is not implemented.");
+}
+
 - (id)initWithNibName:(NSString *)nibName bundle:(NSBundle *)nibBundle
 {
     if ((self=[super init])) {

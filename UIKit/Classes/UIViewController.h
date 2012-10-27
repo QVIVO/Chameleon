@@ -50,7 +50,7 @@ typedef enum {
 
 @class UINavigationItem, UINavigationController, UIBarButtonItem, UISplitViewController;
 
-@interface UIViewController : UIResponder {
+@interface UIViewController : UIResponder <NSCoding> {
 @private
     UIView *_view;
     BOOL _wantsFullScreenLayout;
