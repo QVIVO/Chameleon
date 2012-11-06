@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MPMediaPlayback.h"
+#import <MediaPlayer/MPMediaPlayback.h>
 
 #import <QTKit/QTKit.h>
 

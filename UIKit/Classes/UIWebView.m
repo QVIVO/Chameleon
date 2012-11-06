@@ -214,6 +214,8 @@
     if (_delegateHas.didFinishLoad) {
         [_delegate webViewDidFinishLoad:self];
     }
+//    [_webViewAdapter becomeFirstResponder];
+//    [_webViewAdapter setNeedsDisplay];
 }
 
 - (void)webView:(WebView *)sender didFailLoadWithError:(NSError *)error forFrame:(WebFrame *)frame
@@ -249,6 +251,16 @@
 - (BOOL)resignFirstResponder
 {
     return [_webViewAdapter resignFirstResponder];
+}
+
+- (BOOL)webViewIsResizable:(WebView *)sender
+{
+    return NO;
+}
+
+- (void)webView:(WebView *)sender setFrame:(NSRect)frame
+{
+    // DO NOTHING to prevent WebView resize window
 }
 
 @end

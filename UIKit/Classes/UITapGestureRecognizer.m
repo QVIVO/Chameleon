@@ -45,6 +45,17 @@
     return self;
 }
 
+//- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+//{
+//    UITouch *touch = [[event touchesForGestureRecognizer:self] anyObject];
+//    if ([touch _gesture] == _UITouchDiscreteGestureRightClick) {
+//        self.state = UIGestureRecognizerStateRecognized;
+//    } else {
+//        self.state = UIGestureRecognizerStateFailed;
+//    }
+//}
+
+
 - (BOOL)canBePreventedByGestureRecognizer:(UIGestureRecognizer *)preventingGestureRecognizer
 {
     // this logic is here based on a note in the docs for -canBePreventedByGestureRecognizer:

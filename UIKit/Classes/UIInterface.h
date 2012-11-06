@@ -40,7 +40,18 @@ typedef enum {
 
 
 @interface UIColor (UIColorSystemColors)
-+ (UIColor *)groupTableViewBackgroundColor;
++ (UIColor *)lightTextColor;                // for a dark background
++ (UIColor *)darkTextColor;                 // for a light background
+
+// Group style table view backgrounds can no longer be represented by a simple color.
+// If you want to have a background in your own view that looks like the table view background,
+// then you should create an empty table view and place it behind your content.
++ (UIColor *)groupTableViewBackgroundColor; // This method will be deprecated during the 6.0 seed program
+
++ (UIColor *)viewFlipsideBackgroundColor;
++ (UIColor *)scrollViewTexturedBackgroundColor;
++ (UIColor *)underPageBackgroundColor;
+
 @end
 
 

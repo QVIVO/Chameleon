@@ -110,7 +110,8 @@ NSMutableArray *_allScreens = nil;
 {
     if ([[_UIKitView window] respondsToSelector:@selector(backingScaleFactor)]) {
         return [[_UIKitView window] backingScaleFactor];
-    } else {
+    }
+    else {
         return 1;
     }
 }

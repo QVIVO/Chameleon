@@ -43,6 +43,11 @@
 @synthesize enabled = _enabled;
 @synthesize view = _view;
 
+- (id)init
+{
+    return [self initWithTarget:nil action:nil];
+}
+
 - (id)initWithTarget:(id)target action:(SEL)action
 {
     if ((self=[super init])) {
@@ -54,7 +59,9 @@
         _registeredActions = [[NSMutableArray alloc] initWithCapacity:1];
         _trackingTouches = [[NSMutableArray alloc] initWithCapacity:1];
         
-        [self addTarget:target action:action];
+        if (target && action) {
+            [self addTarget:target action:action];
+        }
     }
     return self;
 }

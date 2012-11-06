@@ -29,7 +29,7 @@
 
 #import <Foundation/Foundation.h>
 
-extern NSString* const UINibExternalObjects;
+extern NSString * const UINibExternalObjects;
 
 @interface NSBundle (UINibLoading)
 - (NSArray *)loadNibNamed:(NSString *)name owner:(id)owner options:(NSDictionary *)options;		// not implemented, but here to avoid some warnings
@@ -38,3 +38,4 @@ extern NSString* const UINibExternalObjects;
 @interface NSObject (UINibLoading)
 - (void)awakeFromNib;
 @end
+

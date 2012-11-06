@@ -108,7 +108,8 @@
 #import "UITextInput.h"
 #import <UIKit/UINib.h>
 #import "UIAppearance.h"
-
+#import "UINib.h"
+	 
 // non-standard imports
 #import "UIKey.h"
 #import "UIScrollWheelGestureRecognizer.h"

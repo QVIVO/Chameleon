@@ -68,8 +68,6 @@
 - (void)setNavigationBarHidden:(BOOL)hidden animated:(BOOL)animated;
 - (void)setToolbarHidden:(BOOL)hidden animated:(BOOL)animated;                    // toolbar support is not really implemented yet
 
-- (void)setNavigationBarHidden:(BOOL)navigationBarHidden animated:(BOOL)animated; // doesn't animate yet
-
 @property (nonatomic, copy) NSArray *viewControllers;
 @property (nonatomic, readonly, retain) UIViewController *visibleViewController;
 @property (nonatomic, readonly) UINavigationBar *navigationBar;

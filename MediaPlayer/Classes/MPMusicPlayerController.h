@@ -39,7 +39,8 @@ enum {
 };
 typedef NSInteger MPMusicPlaybackState;
 
-extern NSString *const MPMusicPlayerControllerPlaybackStateDidChangeNotification;
+extern NSString * const MPMusicPlayerControllerPlaybackStateDidChangeNotification;
+extern NSString * const MPMediaPlaybackIsPreparedToPlayDidChangeNotification;
 
 @interface MPMusicPlayerController : NSObject {
 }

@@ -89,7 +89,7 @@ typedef enum {
 
 @class UINavigationItem, UINavigationController, UIBarButtonItem, UISplitViewController;
 
-@interface UIViewController : UIResponder {
+@interface UIViewController : UIResponder <NSCoding> {
 @private
     UIView *_view;
     UINavigationItem *_navigationItem;
@@ -166,9 +166,6 @@ typedef enum {
 
 - (void)willMoveToParentViewController:(UIViewController *)parent;
 
-- (void)viewWillLayoutSubviews;
-- (void)viewDidLayoutSubviews;
-
 - (BOOL)isMovingToParentViewController;
 - (BOOL)isMovingFromParentViewController;
 - (BOOL)isBeingDismissed;
@@ -176,9 +173,6 @@ typedef enum {
 
 - (void)dismissViewControllerAnimated:(BOOL)flag completion:(void (^)(void))completion;
 - (void)presentViewController:(UIViewController *)viewControllerToPresent animated:(BOOL)flag completion:(void (^)(void))completion;
-
-
-- (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration;
 
 - (UIView *)rotatingHeaderView;     
 - (UIView *)rotatingFooterView; 

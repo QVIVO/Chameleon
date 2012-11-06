@@ -15,6 +15,8 @@
 @interface UIInternalMovieView : UIView {
 @private
     QTMovieLayer *movieLayer;
+    QTMovie *_movie;
+    MPMovieScalingMode _scalingMode;
 }
 @property (nonatomic, retain) QTMovie* movie;
 @property (nonatomic, assign) MPMovieScalingMode scalingMode;

@@ -31,8 +31,12 @@
 
 #if CGFLOAT_IS_DOUBLE
 #define kUIEdgeInsetsFormat "{%lg, %lg, %lg, %lg}"
+#define kCGAffineTransformFormat "[%lg, %lg, %lg, %lg, %lg, %lg]"
+#define kUIOffsetFormat "{%lg, %lg}"
 #else
-#define kUIEdgeInsetsFormat "{%g, %g, %g, %g}"    
+#define kUIEdgeInsetsFormat "{%g, %g, %g, %g}"
+#define kCGAffineTransformFormat "[%g, %g, %g, %g, %g, %g]"
+#define kUIOffsetFormat "{%g, %g}"
 #endif
 
 
@@ -56,7 +60,16 @@ NSString *NSStringFromCGSize(CGSize s)
 
 NSString *NSStringFromCGAffineTransform(CGAffineTransform transform)
 {
-    return [NSString stringWithFormat:@"[%g, %g, %g, %g, %g, %g]", transform.a, transform.b, transform.c, transform.d, transform.tx, transform.ty];
+    return [NSString stringWithFormat:@kCGAffineTransformFormat, transform.a, transform.b, transform.c, transform.d, transform.tx, transform.ty];
+}
+
+CGAffineTransform CGAffineTransformFromString(NSString* string)
+{
+    CGAffineTransform result = CGAffineTransformIdentity;
+    if (string) {
+        sscanf([string UTF8String], kCGAffineTransformFormat, &result.a, &result.b, &result.c, &result.d, &result.tx, &result.ty);
+    }
+    return result;
 }
 
 NSString *NSStringFromUIEdgeInsets(UIEdgeInsets insets)
@@ -85,8 +98,18 @@ CGPoint CGPointFromString(NSString* string)
 
 NSString *NSStringFromUIOffset(UIOffset offset)
 {
-    return [NSString stringWithFormat:@"{%g, %g}", offset.horizontal, offset.vertical];
+    return [NSString stringWithFormat:@kUIOffsetFormat, offset.horizontal, offset.vertical];
 }
+
+UIOffset UIOffsetFromString(NSString *string)
+{
+    UIOffset result = UIOffsetZero;
+    if (string) {
+        sscanf([string UTF8String], kUIOffsetFormat, &result.horizontal, &result.vertical);
+    }
+    return result;
+}
+
 
 @implementation NSValue (NSValueUIGeometryExtensions)
 + (NSValue *)valueWithCGPoint:(CGPoint)point
@@ -159,24 +182,59 @@ NSString *NSStringFromUIOffset(UIOffset offset)
     [self encodePoint:NSPointFromCGPoint(point) forKey:key];
 }
 
-- (CGPoint) decodeCGPointForKey:(NSString *)key
+- (void)encodeCGRect:(CGRect)rect forKey:(NSString *)key
+{
+    [self encodeRect:NSRectFromCGRect(rect) forKey:key];
+}
+
+- (void)encodeCGSize:(CGSize)size forKey:(NSString *)key
+{
+    [self encodeSize:NSSizeFromCGSize(size) forKey:key];
+}
+
+- (void)encodeUIEdgeInsets:(UIEdgeInsets)insets forKey:(NSString *)key
+{
+    [self encodeObject:NSStringFromUIEdgeInsets(insets) forKey:key];
+}
+
+- (void)encodeCGAffineTransform:(CGAffineTransform)transform forKey:(NSString *)key
+{
+    [self encodeObject:NSStringFromCGAffineTransform(transform) forKey:key];
+}
+
+- (void)encodeUIOffset:(UIOffset)offset forKey:(NSString *)key
+{
+    [self encodeObject:NSStringFromUIOffset(offset) forKey:key];
+}
+
+- (CGPoint)decodeCGPointForKey:(NSString *)key
 {
     return NSPointToCGPoint([self decodePointForKey:key]);
 }
 
-- (CGRect) decodeCGRectForKey:(NSString*)key
+- (CGSize)decodeCGSizeForKey:(NSString *)key
+{
+    return NSSizeToCGSize([self decodeSizeForKey:key]);
+    
+}
+- (CGRect)decodeCGRectForKey:(NSString *)key
 {
     return NSRectToCGRect([self decodeRectForKey:key]);
 }
 
-- (CGSize) decodeCGSizeForKey:(NSString*)key
+- (CGAffineTransform)decodeCGAffineTransformForKey:(NSString *)key
 {
-    return NSSizeToCGSize([self decodeSizeForKey:key]);
+    return CGAffineTransformFromString([self decodeObjectForKey:key]);
 }
 
 - (UIEdgeInsets) decodeUIEdgeInsetsForKey:(NSString*)key;
 {
     return UIEdgeInsetsFromString([self decodeObjectForKey:key]);
+}
+
+- (UIOffset)decodeUIOffsetForKey:(NSString *)key
+{
+    return UIOffsetFromString([self decodeObjectForKey:key]);
 }
 
 @end

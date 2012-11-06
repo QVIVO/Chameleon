@@ -75,7 +75,7 @@ typedef enum {
 } UIInterfaceOrientation;
 
 /* iOS 6.0 rotation def */
-typedef NS_OPTIONS(NSUInteger, UIInterfaceOrientationMask) {
+typedef enum {
     UIInterfaceOrientationMaskPortrait = (1 << UIInterfaceOrientationPortrait),
     UIInterfaceOrientationMaskLandscapeLeft = (1 << UIInterfaceOrientationLandscapeLeft),
     UIInterfaceOrientationMaskLandscapeRight = (1 << UIInterfaceOrientationLandscapeRight),
@@ -83,7 +83,7 @@ typedef NS_OPTIONS(NSUInteger, UIInterfaceOrientationMask) {
     UIInterfaceOrientationMaskLandscape = (UIInterfaceOrientationMaskLandscapeLeft | UIInterfaceOrientationMaskLandscapeRight),
     UIInterfaceOrientationMaskAll = (UIInterfaceOrientationMaskPortrait | UIInterfaceOrientationMaskLandscapeLeft | UIInterfaceOrientationMaskLandscapeRight | UIInterfaceOrientationMaskPortraitUpsideDown),
     UIInterfaceOrientationMaskAllButUpsideDown = (UIInterfaceOrientationMaskPortrait | UIInterfaceOrientationMaskLandscapeLeft | UIInterfaceOrientationMaskLandscapeRight),
-};
+} UIInterfaceOrientationMask;
 
 #define UIInterfaceOrientationIsPortrait(orientation) \
 ((orientation) == UIInterfaceOrientationPortrait || \
