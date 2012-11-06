@@ -1815,7 +1815,7 @@
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "@executable_path/../Frameworks";
 				PRODUCT_NAME = UIKit;
-				SDKROOT = macosx10.8;
+				SDKROOT = macosx10.7;
 				SKIP_INSTALL = YES;
 				SYMROOT = "$(SRCROOT)/../../../Frameworks";
 				VALID_ARCHS = "i386 x86_64";
