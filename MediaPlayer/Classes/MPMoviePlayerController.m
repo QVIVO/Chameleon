@@ -30,7 +30,10 @@ NSString *const MPMovieDurationAvailableNotification = @"MPMovieDurationAvailabl
 @synthesize shouldAutoplay;
 @synthesize scalingMode=_scalingMode;
 
-
+// MPMediaPlayback Attributes
+@synthesize isPreparedToPlay = _isPreparedToPlay;
+@synthesize currentPlaybackRate = _currentPlaybackRate;
+@synthesize currentPlaybackTime = _currentPlaybackTime;
 
 ///////////////////////////////////////////////////////////////////////////////
 //
@@ -72,66 +75,6 @@ NSString *const MPMovieDurationAvailableNotification = @"MPMovieDurationAvailabl
     return movieView;
 }
 
-
-
-///////////////////////////////////////////////////////////////////////////////
-//
-- (MPMovieLoadState)loadState
-{    
-    NSNumber* loadState = [movie attributeForKey: QTMovieLoadStateAttribute];        
-    
-    switch ([loadState intValue]) {
-        case QTMovieLoadStateError:            
-        {
-            NSLog(@"woo");
-            NSNumber *stopCode = [NSNumber numberWithInt: MPMovieFinishReasonPlaybackError];
-            NSDictionary *userInfo = [NSDictionary dictionaryWithObject: stopCode
-                                                                 forKey: MPMoviePlayerPlaybackDidFinishReasonUserInfoKey];
-            
-            // if there's a loading error we generate a stop notification
-            [[NSNotificationCenter defaultCenter] postNotificationName: MPMoviePlayerPlaybackDidFinishNotification
-                                                                object: self 
-                                                              userInfo: userInfo];
-            
-            
-            _loadState = MPMovieLoadStateUnknown;                        
-        }
-            break;
-
-        
-        
-        case QTMovieLoadStateLoading:             
-            _loadState = MPMovieLoadStateUnknown;            
-            break;
-            
-    
-        
-        case QTMovieLoadStateLoaded:            
-            // we have the meta data, so post the duration available notification
-            [[NSNotificationCenter defaultCenter] postNotificationName: MPMovieDurationAvailableNotification
-                                                                object: self];
-            
-            _loadState = MPMovieLoadStateUnknown;            
-            break;
-            
-        case QTMovieLoadStatePlayable:
-            _loadState = MPMovieLoadStatePlayable;
-            break;
-            
-        case QTMovieLoadStatePlaythroughOK:
-            _loadState = MPMovieLoadStatePlaythroughOK;            
-            break;
-            
-        case QTMovieLoadStateComplete:
-            _loadState = MPMovieLoadStatePlaythroughOK;
-            
-            break;                                
-    }
-    
-    return _loadState;
-}
-
-
 #pragma mark - notifications
 
 
@@ -145,7 +88,7 @@ NSString *const MPMovieDurationAvailableNotification = @"MPMovieDurationAvailabl
 
     _playbackState = MPMoviePlaybackStateStopped;
         
-    NSNumber *stopCode = [NSNumber numberWithInt: MPMovieFinishReasonPlaybackEnded];
+    NSNumber *stopCode = [NSNumber numberWithInteger:MPMovieFinishReasonPlaybackEnded];
     NSDictionary *userInfo = [NSDictionary dictionaryWithObject: stopCode
                                                          forKey: MPMoviePlayerPlaybackDidFinishReasonUserInfoKey];
     
@@ -161,7 +104,9 @@ NSString *const MPMovieDurationAvailableNotification = @"MPMovieDurationAvailabl
 {
     if (notification.object != movie)
         return;
-        
+    
+    [self updateLoadState];
+    
     [[NSNotificationCenter defaultCenter] postNotificationName: MPMoviePlayerLoadStateDidChangeNotification
                                                         object: self];
 }
@@ -182,14 +127,6 @@ NSString *const MPMovieDurationAvailableNotification = @"MPMovieDurationAvailabl
         _playbackState = MPMoviePlaybackStateStopped;
         _repeatMode = MPMovieRepeatModeNone;
         
-        NSError *error = nil;
-        movie = [[QTMovie alloc] initWithURL: url
-                                       error: &error];
-        
-        movieView = [[UIInternalMovieView alloc] initWithMovie: movie];
-        
-        self.scalingMode = MPMovieScalingModeAspectFit;
-        
         [[NSNotificationCenter defaultCenter] addObserver: self
                                                  selector: @selector(loadStateChangeOccurred:)
                                                      name: QTMovieLoadStateDidChangeNotification
@@ -197,8 +134,24 @@ NSString *const MPMovieDurationAvailableNotification = @"MPMovieDurationAvailabl
         
         [[NSNotificationCenter defaultCenter] addObserver: self
                                                  selector: @selector(didEndOccurred:)
-                                                     name: QTMovieDidEndNotification 
+                                                     name: QTMovieDidEndNotification
                                                    object: nil];
+
+        NSError *error = nil;
+        NSDictionary *attributes = [NSDictionary dictionaryWithObjectsAndKeys:
+                                    url, QTMovieURLAttribute,
+                                    [NSNumber numberWithBool:YES], QTMovieOpenForPlaybackAttribute,
+                                    [NSNumber numberWithBool:YES], QTMovieOpenAsyncOKAttribute,
+                                    [NSNumber numberWithBool:YES], QTMovieOpenAsyncRequiredAttribute,
+                                    nil];
+        movie = [[QTMovie alloc] initWithAttributes:attributes error:&error];
+        movieView = [[UIInternalMovieView alloc] initWithMovie: movie];
+        if (error) {
+            NSLog(@"%@", error);
+        }
+        
+        self.scalingMode = MPMovieScalingModeAspectFit;
+        
     }
     
     return self;
@@ -224,6 +177,7 @@ NSString *const MPMovieDurationAvailableNotification = @"MPMovieDurationAvailabl
 {
     [movie play];
     _playbackState = MPMoviePlaybackStatePlaying;
+    
 }
 
 
@@ -233,6 +187,8 @@ NSString *const MPMovieDurationAvailableNotification = @"MPMovieDurationAvailabl
 {
     [movie stop];
     _playbackState = MPMoviePlaybackStatePaused;
+    [[NSNotificationCenter defaultCenter] postNotificationName:MPMoviePlayerPlaybackStateDidChangeNotification
+                                                        object:self];
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -247,6 +203,71 @@ NSString *const MPMovieDurationAvailableNotification = @"MPMovieDurationAvailabl
 {
     [movie stop];
     _playbackState = MPMoviePlaybackStateStopped;
+    [[NSNotificationCenter defaultCenter] postNotificationName:MPMoviePlayerPlaybackStateDidChangeNotification
+                                                        object:self];
+}
+
+///////////////////////////////////////////////////////////////////////////////
+//
+- (void)beginSeekingBackward
+{
+    NSLog(@"beginSeekingBackward is not implemented.");
+}
+
+///////////////////////////////////////////////////////////////////////////////
+//
+- (void)beginSeekingForward
+{
+    NSLog(@"beginSeekingForward is not implemented.");
+}
+
+///////////////////////////////////////////////////////////////////////////////
+//
+- (void)endSeeking
+{
+    NSLog(@"endSeeking is not implemented.");
+}
+
+///////////////////////////////////////////////////////////////////////////////
+//
+- (NSTimeInterval)currentPlaybackTime
+{
+    if (movie) {
+        NSTimeInterval currentTime;
+        if (QTGetTimeInterval(movie.currentTime, &currentTime)) {
+            return currentTime;
+        }
+    }
+    return (NSTimeInterval)0;
+}
+
+///////////////////////////////////////////////////////////////////////////////
+//
+- (void)setCurrentPlaybackTime:(NSTimeInterval)currentPlaybackTime
+{
+    if (movie) {
+        [movie setCurrentTime:QTMakeTimeWithTimeInterval(currentPlaybackTime)];
+    }
+}
+
+///////////////////////////////////////////////////////////////////////////////
+//
+- (float)currentPlaybackRate
+{
+    if (movie) {
+        return movie.rate;
+    } else {
+        return 0;
+    }
+}
+
+///////////////////////////////////////////////////////////////////////////////
+//
+- (void)setCurrentPlaybackRate:(float)currentPlaybackRate
+{
+    if (movie) {
+        [movie setRate:currentPlaybackRate];
+    }
 }
 
 #pragma mark - Pending
@@ -258,6 +279,47 @@ NSString *const MPMovieDurationAvailableNotification = @"MPMovieDurationAvailabl
 - (UIView*) backgroundView {
     NSLog(@"[CHAMELEON] MPMoviePlayerController.backgroundView not implemented");
     return nil;
+}
+
+#pragma mark - Private
+
+- (void)updateLoadState
+{
+    long loadState = [[movie attributeForKey: QTMovieLoadStateAttribute] longValue];
+    NSLog(@"updateLoadState: %d", loadState);
+    
+    if (loadState <= QTMovieLoadStateError) {
+        NSLog(@"woo");
+        NSNumber *stopCode = [NSNumber numberWithInteger:MPMovieFinishReasonPlaybackError];
+        NSDictionary *userInfo = [NSDictionary dictionaryWithObject: stopCode
+                                                             forKey: MPMoviePlayerPlaybackDidFinishReasonUserInfoKey];
+        
+        // if there's a loading error we generate a stop notification
+        [[NSNotificationCenter defaultCenter] postNotificationName: MPMoviePlayerPlaybackDidFinishNotification
+                                                            object: self
+                                                          userInfo: userInfo];
+        
+        _loadState = MPMovieLoadStateUnknown;
+        return;
+    }
+
+    if (loadState >= QTMovieLoadStatePlaythroughOK) {
+        _loadState = MPMovieLoadStatePlaythroughOK;
+    } else if (loadState >= QTMovieLoadStatePlayable) {
+        if (_loadState == MPMovieLoadStateUnknown) {
+            // we have the meta data, so post the duration available notification
+            [[NSNotificationCenter defaultCenter] postNotificationName: MPMovieDurationAvailableNotification
+                                                                object: self];            
+        }
+        _loadState = MPMovieLoadStatePlayable;
+    } else if (loadState >= QTMovieLoadStateLoaded) {
+        _loadState = MPMovieLoadStateUnknown;
+//        // we have the meta data, so post the duration available notification
+//        [[NSNotificationCenter defaultCenter] postNotificationName: MPMovieDurationAvailableNotification
+//                                                            object: self];
+    } else if (loadState >= QTMovieLoadStateLoading) {
+        _loadState = MPMovieLoadStateUnknown;
+    }
 }
 
 
