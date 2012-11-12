@@ -43,6 +43,7 @@ NSMutableDictionary *imageCache = nil;
     imageCache = [[NSMutableDictionary alloc] init];
 }
 
+
 + (void)_cacheImage:(UIImage *)image forName:(NSString *)name
 {
     if (image && name) {
@@ -55,12 +56,16 @@ NSMutableDictionary *imageCache = nil;
     return [imageCache objectForKey:name];
 }
 
+
+
 + (UIImage *)_frameworkImageWithName:(NSString *)name leftCapWidth:(NSUInteger)leftCapWidth topCapHeight:(NSUInteger)topCapHeight
 {
     UIImage *image = [self _cachedImageForName:name];
 
     if (!image) {
         NSBundle *frameworkBundle = [NSBundle bundleWithIdentifier:@"org.chameleonproject.UIKit"];
+        //NSString *myBundleId = [[NSBundle mainBundle] bundleIdentifier];
+        //NSBundle *frameworkBundle = [NSBundle bundleWithIdentifier:myBundleId];
         NSString *frameworkFile = [[frameworkBundle resourcePath] stringByAppendingPathComponent:name];
         image = [[self imageWithContentsOfFile:frameworkFile] stretchableImageWithLeftCapWidth:leftCapWidth topCapHeight:topCapHeight];
         [self _cacheImage:image forName:name];
@@ -114,6 +119,32 @@ NSMutableDictionary *imageCache = nil;
     return [self _frameworkImageWithName:@"<UIPopoverView> background.png" leftCapWidth:23 topCapHeight:23];
 }
 
+
++ (UIImage *)_leftLionPopoverArrowImage
+{
+    return [self _frameworkImageWithName:@"<UIPopoverView> lion-arrow-left.png" leftCapWidth:0 topCapHeight:0];
+}
+
++ (UIImage *)_rightLionPopoverArrowImage
+{
+    return [self _frameworkImageWithName:@"<UIPopoverView> lion-arrow-right.png" leftCapWidth:0 topCapHeight:0];
+}
+
++ (UIImage *)_topLionPopoverArrowImage
+{
+    return [self _frameworkImageWithName:@"<UIPopoverView> lion-arrow-top.png" leftCapWidth:0 topCapHeight:0];
+}
+
++ (UIImage *)_bottomLionPopoverArrowImage
+{
+    return [self _frameworkImageWithName:@"<UIPopoverView> lion-arrow-bottom.png" leftCapWidth:0 topCapHeight:0];
+}
+	
++ (UIImage *)_popoverLionBackgroundImage
+{
+    return [self _frameworkImageWithName:@"<UIPopoverView> lion-background.png" leftCapWidth:23 topCapHeight:23];
+}
+
 + (UIImage *)_roundedRectButtonImage
 {
     return [self _frameworkImageWithName:@"<UIRoundedRectButton> normal.png" leftCapWidth:12 topCapHeight:9];
@@ -139,14 +170,147 @@ NSMutableDictionary *imageCache = nil;
     return [self _frameworkImageWithName:@"<UIBarButtonSystemItem> reply.png" leftCapWidth:0 topCapHeight:0];
 }
 
++ (UIImage *)_textFieldRoundedRectBackground
+{
+    return [self _frameworkImageWithName:@"<UITextField> roundedRectBackgroundImage.png" leftCapWidth:12.0f topCapHeight:0];
+}
+
++ (UIImage *)_searchBarIcon
+{
+	return [self _frameworkImageWithName:@"<UISearchBar> search-icon.png" leftCapWidth:0.0f topCapHeight:0.0f];
+}
+
++ (UIImage *)_buttonBarSystemItemCompose
+{
+    return [self _frameworkImageWithName:@"<UIBarButtonSystemItem> compose.png" leftCapWidth:0 topCapHeight:0];
+}
+
++ (UIImage *)_buttonBarSystemItemAction
+{
+    return [self _frameworkImageWithName:@"<UIBarButtonSystemItem> action.png" leftCapWidth:0 topCapHeight:0];
+}
+
++ (UIImage *)_buttonBarSystemItemOrganize;
+{
+    return [self _frameworkImageWithName:@"<UIBarButtonSystemItem> organize.png" leftCapWidth:0 topCapHeight:0];
+}
+
++ (UIImage *)_buttonBarSystemItemTrash;
+{
+    return [self _frameworkImageWithName:@"<UIBarButtonSystemItem> trash.png" leftCapWidth:0 topCapHeight:0];
+}
+
++ (UIImage *)_buttonBarSystemItemBookmarks;
+{
+    return [self _frameworkImageWithName:@"<UIBarButtonSystemItem> bookmarks.png" leftCapWidth:0 topCapHeight:0];
+}
+
++ (UIImage *)_buttonBarSystemItemSearch;
+{
+    return [self _frameworkImageWithName:@"<UIBarButtonSystemItem> search.png" leftCapWidth:0 topCapHeight:0];
+}
+
++ (UIImage *)_buttonBarSystemItemRefresh;
+{
+    return [self _frameworkImageWithName:@"<UIBarButtonSystemItem> refresh.png" leftCapWidth:0 topCapHeight:0];
+}
+
++ (UIImage *)_buttonBarSystemItemStop;
+{
+    return [self _frameworkImageWithName:@"<UIBarButtonSystemItem> stop.png" leftCapWidth:0 topCapHeight:0];
+}
+
++ (UIImage *)_buttonBarSystemItemCamera;
+{
+    return [self _frameworkImageWithName:@"<UIBarButtonSystemItem> camera.png" leftCapWidth:0 topCapHeight:0];
+}
+
++ (UIImage *)_buttonBarSystemItemPlay;
+{
+    return [self _frameworkImageWithName:@"<UIBarButtonSystemItem> play.png" leftCapWidth:0 topCapHeight:0];
+}
+
++ (UIImage *)_buttonBarSystemItemPause;
+{
+    return [self _frameworkImageWithName:@"<UIBarButtonSystemItem> search.png" leftCapWidth:0 topCapHeight:0];
+}
+
++ (UIImage *)_buttonBarSystemItemRewind;
+{
+    return [self _frameworkImageWithName:@"<UIBarButtonSystemItem> rewind.png" leftCapWidth:0 topCapHeight:0];
+}
+
++ (UIImage *)_buttonBarSystemItemFastForward;
+{
+    return [self _frameworkImageWithName:@"<UIBarButtonSystemItem> fastforward.png" leftCapWidth:0 topCapHeight:0];
+}
+
++ (UIImage *)_buttonBarSystemItemDone
+{
+	return [self _frameworkImageWithName:@"<UIBarButtonItemStyleDone>.png" leftCapWidth:8 topCapHeight:0];
+}
+
++ (UIImage *)_highlightedButtonBarSystemItemDone
+{
+	return [self _frameworkImageWithName:@"<UIBarButtonItemStyleDone> hi.png" leftCapWidth:8 topCapHeight:0];
+}
+
++ (UIImage *)_buttonBarSystemItemPlain
+{
+	return [self _frameworkImageWithName:@"<UIBarButtonItemStylePlain>.png" leftCapWidth:8 topCapHeight:0];
+}
+
++ (UIImage *)_highlightedButtonBarSystemItemPlain
+{
+	return [self _frameworkImageWithName:@"<UIBarButtonItemStylePlain> hi.png" leftCapWidth:8 topCapHeight:0];
+}
+
++ (UIImage *)_tableSelection
+{
+	return [self _frameworkImageWithName:@"<UITableView> selection.png" leftCapWidth:0 topCapHeight:0];
+}
+
++ (UIImage *)_tableSelectionGray
+{
+	return [self _frameworkImageWithName:@"<UITableView> selectionGray.png" leftCapWidth:0 topCapHeight:0];
+}
+
+- (UIImage *)_toolbarImage
+{
+    // NOTE.. I don't know where to put this, really, but it seems like the real UIKit reduces image size by 75% if they are too
+    // big for a toolbar. That seems funky, but I guess here is as good a place as any to do that? I don't really know...
+
+    CGSize imageSize = self.size;
+    CGSize size = CGSizeZero;
+    
+    if (imageSize.width > 24 || imageSize.height > 24) {
+        size.height = imageSize.height * 0.75f;
+        size.width = imageSize.width / imageSize.height * size.height;
+    } else {
+        size = imageSize;
+    }
+    
+    CGRect rect = CGRectMake(0,0,size.width,size.height);
+    
+    UIGraphicsBeginImageContext(size);
+    //[[UIColor colorWithRed:101/255.f green:104/255.f blue:121/255.f alpha:1] setFill];
+    [[UIColor whiteColor] setFill];
+    UIRectFill(rect);
+    [self drawInRect:rect blendMode:kCGBlendModeDestinationIn alpha:1];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return image;
+}
+
 + (UIImage *)_tabBarBackgroundImage
 {
-  return [self _frameworkImageWithName:@"<UITabBar> background.png" leftCapWidth:6 topCapHeight:0];
+    return [self _frameworkImageWithName:@"<UITabBar> background.png" leftCapWidth:6 topCapHeight:0];
 }
 
 + (UIImage *)_tabBarItemImage
 {
-  return [self _frameworkImageWithName:@"<UITabBar> item.png" leftCapWidth:8 topCapHeight:0];
+    return [self _frameworkImageWithName:@"<UITabBar> item.png" leftCapWidth:8 topCapHeight:0];
 }
 
 - (id)_initWithRepresentations:(NSArray *)reps
@@ -196,31 +360,80 @@ NSMutableDictionary *imageCache = nil;
     [rep drawInRect:rect fromRect:CGRectNull];
 }
 
-- (UIImage *)_toolbarImage
+
++ (UIImage *)_tabBarButtonImage
 {
-    // NOTE.. I don't know where to put this, really, but it seems like the real UIKit reduces image size by 75% if they are too
-    // big for a toolbar. That seems funky, but I guess here is as good a place as any to do that? I don't really know...
-    
-    CGSize imageSize = self.size;
-    CGSize size = CGSizeZero;
-    
-    if (imageSize.width > 24 || imageSize.height > 24) {
-        size.height = imageSize.height * 0.75f;
-        size.width = imageSize.width / imageSize.height * size.height;
-    } else {
-        size = imageSize;
-    }
-    
-    CGRect rect = CGRectMake(0,0,size.width,size.height);
-    
-    UIGraphicsBeginImageContextWithOptions(size, NO, self.scale);
-    [[UIColor colorWithRed:101/255.f green:104/255.f blue:121/255.f alpha:1] setFill];
-    UIRectFill(rect);
-    [self drawInRect:rect blendMode:kCGBlendModeDestinationIn alpha:1];
-    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    
-    return image;
+    return [self _frameworkImageWithName:@"<UITabBar> button.png" leftCapWidth:8 topCapHeight:8];
+}
+
++ (UIImage *)_highlightedTabBarImage
+{
+    return [self _frameworkImageWithName:@"<UITabBarButtonImage> highlighted.png" leftCapWidth:3 topCapHeight:5];
+}
+
++ (UIImage *)_tabBarButtonBadgeImage
+{
+    return [self _frameworkImageWithName:@"<UITabBarButtonBadge> background.png" leftCapWidth:6 topCapHeight:8];
+}
+
++ (UIImage *)_defaultNavigationBarBackgroundImage
+{
+	return [self _frameworkImageWithName:@"<UINavigationBarBackground> default.png" leftCapWidth:0 topCapHeight:0];
+}
+
++ (UIImage *)_blackTranslucentNavigationBarBackgroundImage
+{
+	return [self _frameworkImageWithName:@"<UINavigationBarBackground> blackTranslucent.png" leftCapWidth:0 topCapHeight:0];
+}
+
++ (UIImage *)_blackOpaqueNavigationBarBackgroundImage
+{
+	return [self _frameworkImageWithName:@"<UINavigationBarBackground> blackOpaque.png" leftCapWidth:0 topCapHeight:0];
+}
+
++ (UIImage *)_sliderMinimumTrackImage
+{
+    return [self _frameworkImageWithName:@"<UISlider> minimumTrack.png" leftCapWidth:5 topCapHeight:5];
+}
+
++ (UIImage *)_sliderMaximumTrackImage
+{
+    return [self _frameworkImageWithName:@"<UISlider> maximumTrack.png" leftCapWidth:5 topCapHeight:5];
+}
+
++ (UIImage *)_sliderThumbImage
+{
+    return [self _frameworkImageWithName:@"<UISlider> thumb.png" leftCapWidth:0 topCapHeight:0];
+}
+
++ (UIImage *)_segmentedControlButtonImage 
+{
+    return [self _frameworkImageWithName:@"<UISegmentedControl> button.png" leftCapWidth:6 topCapHeight:0];
+}
+
++ (UIImage *)_segmentedControlHighlightedButtonImage 
+{    
+    return [self _frameworkImageWithName:@"<UISegmentedControl> button-highlighted.png" leftCapWidth:6 topCapHeight:0];
+}
+
++ (UIImage *)_segmentedControlDividerImage 
+{    
+    return [self _frameworkImageWithName:@"<UISegmentedControl> divider.png" leftCapWidth:0 topCapHeight:0];
+}
+
++ (UIImage *)_segmentedControlHighlightedDividerImage
+{
+    return [self _frameworkImageWithName:@"<UISegmentedControl> divider-highlighted.png" leftCapWidth:0 topCapHeight:0];
+}
+
++ (UIImage *)_switchOnImage
+{
+    return [self _frameworkImageWithName:@"<UISwitch> on.png" leftCapWidth:0 topCapHeight:0];
+}
+
++ (UIImage *)_switchOffImage
+{
+    return [self _frameworkImageWithName:@"<UISwitch> off.png" leftCapWidth:0 topCapHeight:0];
 }
 
 @end

@@ -297,6 +297,55 @@
 		78D533DD133A9434006F17CA /* UISearchDisplayController.h in Headers */ = {isa = PBXBuildFile; fileRef = 78D533DB133A9434006F17CA /* UISearchDisplayController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		78D533DE133A9434006F17CA /* UISearchDisplayController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D533DC133A9434006F17CA /* UISearchDisplayController.m */; };
 		8DC2EF570486A6940098B216 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */; };
+		E7513B8B16509D8D00B59693 /* <UIBarButtonItemStyleDone> hi.png in Resources */ = {isa = PBXBuildFile; fileRef = E7513B5A16509D8D00B59693 /* <UIBarButtonItemStyleDone> hi.png */; };
+		E7513B8C16509D8D00B59693 /* <UIBarButtonItemStyleDone>.png in Resources */ = {isa = PBXBuildFile; fileRef = E7513B5B16509D8D00B59693 /* <UIBarButtonItemStyleDone>.png */; };
+		E7513B8D16509D8D00B59693 /* <UIBarButtonItemStylePlain> hi.png in Resources */ = {isa = PBXBuildFile; fileRef = E7513B5C16509D8D00B59693 /* <UIBarButtonItemStylePlain> hi.png */; };
+		E7513B8E16509D8D00B59693 /* <UIBarButtonItemStylePlain>.png in Resources */ = {isa = PBXBuildFile; fileRef = E7513B5D16509D8D00B59693 /* <UIBarButtonItemStylePlain>.png */; };
+		E7513B8F16509D8D00B59693 /* <UIBarButtonSystemItem> action.png in Resources */ = {isa = PBXBuildFile; fileRef = E7513B5E16509D8D00B59693 /* <UIBarButtonSystemItem> action.png */; };
+		E7513B9016509D8D00B59693 /* <UIBarButtonSystemItem> bookmarks.png in Resources */ = {isa = PBXBuildFile; fileRef = E7513B5F16509D8D00B59693 /* <UIBarButtonSystemItem> bookmarks.png */; };
+		E7513B9116509D8D00B59693 /* <UIBarButtonSystemItem> camera.png in Resources */ = {isa = PBXBuildFile; fileRef = E7513B6016509D8D00B59693 /* <UIBarButtonSystemItem> camera.png */; };
+		E7513B9216509D8D00B59693 /* <UIBarButtonSystemItem> compose.png in Resources */ = {isa = PBXBuildFile; fileRef = E7513B6116509D8D00B59693 /* <UIBarButtonSystemItem> compose.png */; };
+		E7513B9316509D8D00B59693 /* <UIBarButtonSystemItem> fastforward.png in Resources */ = {isa = PBXBuildFile; fileRef = E7513B6216509D8D00B59693 /* <UIBarButtonSystemItem> fastforward.png */; };
+		E7513B9416509D8D00B59693 /* <UIBarButtonSystemItem> organize.png in Resources */ = {isa = PBXBuildFile; fileRef = E7513B6316509D8D00B59693 /* <UIBarButtonSystemItem> organize.png */; };
+		E7513B9516509D8D00B59693 /* <UIBarButtonSystemItem> pause.png in Resources */ = {isa = PBXBuildFile; fileRef = E7513B6416509D8D00B59693 /* <UIBarButtonSystemItem> pause.png */; };
+		E7513B9616509D8D00B59693 /* <UIBarButtonSystemItem> play.png in Resources */ = {isa = PBXBuildFile; fileRef = E7513B6516509D8D00B59693 /* <UIBarButtonSystemItem> play.png */; };
+		E7513B9716509D8D00B59693 /* <UIBarButtonSystemItem> refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = E7513B6616509D8D00B59693 /* <UIBarButtonSystemItem> refresh.png */; };
+		E7513B9816509D8D00B59693 /* <UIBarButtonSystemItem> rewind.png in Resources */ = {isa = PBXBuildFile; fileRef = E7513B6716509D8D00B59693 /* <UIBarButtonSystemItem> rewind.png */; };
+		E7513B9916509D8D00B59693 /* <UIBarButtonSystemItem> search.png in Resources */ = {isa = PBXBuildFile; fileRef = E7513B6816509D8D00B59693 /* <UIBarButtonSystemItem> search.png */; };
+		E7513B9A16509D8D00B59693 /* <UIBarButtonSystemItem> stop.png in Resources */ = {isa = PBXBuildFile; fileRef = E7513B6916509D8D00B59693 /* <UIBarButtonSystemItem> stop.png */; };
+		E7513B9B16509D8D00B59693 /* <UIBarButtonSystemItem> trash.png in Resources */ = {isa = PBXBuildFile; fileRef = E7513B6A16509D8D00B59693 /* <UIBarButtonSystemItem> trash.png */; };
+		E7513B9C16509D8D00B59693 /* <UIButton> detailDisclosureButton.png in Resources */ = {isa = PBXBuildFile; fileRef = E7513B6B16509D8D00B59693 /* <UIButton> detailDisclosureButton.png */; };
+		E7513B9D16509D8D00B59693 /* <UIButton> detailDisclosureButtonPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = E7513B6C16509D8D00B59693 /* <UIButton> detailDisclosureButtonPressed.png */; };
+		E7513B9E16509D8D00B59693 /* <UINavigationBarBackground> blackOpaque.png in Resources */ = {isa = PBXBuildFile; fileRef = E7513B6D16509D8D00B59693 /* <UINavigationBarBackground> blackOpaque.png */; };
+		E7513B9F16509D8D00B59693 /* <UINavigationBarBackground> blackTranslucent.png in Resources */ = {isa = PBXBuildFile; fileRef = E7513B6E16509D8D00B59693 /* <UINavigationBarBackground> blackTranslucent.png */; };
+		E7513BA016509D8D00B59693 /* <UINavigationBarBackground> default.png in Resources */ = {isa = PBXBuildFile; fileRef = E7513B6F16509D8D00B59693 /* <UINavigationBarBackground> default.png */; };
+		E7513BA116509D8D00B59693 /* <UIPopoverView> lion-arrow-bottom.png in Resources */ = {isa = PBXBuildFile; fileRef = E7513B7016509D8D00B59693 /* <UIPopoverView> lion-arrow-bottom.png */; };
+		E7513BA216509D8D00B59693 /* <UIPopoverView> lion-arrow-left.png in Resources */ = {isa = PBXBuildFile; fileRef = E7513B7116509D8D00B59693 /* <UIPopoverView> lion-arrow-left.png */; };
+		E7513BA316509D8D00B59693 /* <UIPopoverView> lion-arrow-right.png in Resources */ = {isa = PBXBuildFile; fileRef = E7513B7216509D8D00B59693 /* <UIPopoverView> lion-arrow-right.png */; };
+		E7513BA416509D8D00B59693 /* <UIPopoverView> lion-arrow-top.png in Resources */ = {isa = PBXBuildFile; fileRef = E7513B7316509D8D00B59693 /* <UIPopoverView> lion-arrow-top.png */; };
+		E7513BA516509D8D00B59693 /* <UIPopoverView> lion-background.png in Resources */ = {isa = PBXBuildFile; fileRef = E7513B7416509D8D00B59693 /* <UIPopoverView> lion-background.png */; };
+		E7513BA616509D8D00B59693 /* <UISearchBar> search-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E7513B7516509D8D00B59693 /* <UISearchBar> search-icon.png */; };
+		E7513BA716509D8D00B59693 /* <UISegmentedControl> button-highlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = E7513B7616509D8D00B59693 /* <UISegmentedControl> button-highlighted.png */; };
+		E7513BA816509D8D00B59693 /* <UISegmentedControl> button.png in Resources */ = {isa = PBXBuildFile; fileRef = E7513B7716509D8D00B59693 /* <UISegmentedControl> button.png */; };
+		E7513BA916509D8D00B59693 /* <UISegmentedControl> divider-highlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = E7513B7816509D8D00B59693 /* <UISegmentedControl> divider-highlighted.png */; };
+		E7513BAA16509D8D00B59693 /* <UISegmentedControl> divider.png in Resources */ = {isa = PBXBuildFile; fileRef = E7513B7916509D8D00B59693 /* <UISegmentedControl> divider.png */; };
+		E7513BAB16509D8D00B59693 /* <UISlider> maximumTrack.png in Resources */ = {isa = PBXBuildFile; fileRef = E7513B7A16509D8D00B59693 /* <UISlider> maximumTrack.png */; };
+		E7513BAC16509D8D00B59693 /* <UISlider> minimumTrack.png in Resources */ = {isa = PBXBuildFile; fileRef = E7513B7B16509D8D00B59693 /* <UISlider> minimumTrack.png */; };
+		E7513BAD16509D8D00B59693 /* <UISlider> thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = E7513B7C16509D8D00B59693 /* <UISlider> thumb.png */; };
+		E7513BAE16509D8D00B59693 /* <UISwitch> off.png in Resources */ = {isa = PBXBuildFile; fileRef = E7513B7D16509D8D00B59693 /* <UISwitch> off.png */; };
+		E7513BAF16509D8D00B59693 /* <UISwitch> on.png in Resources */ = {isa = PBXBuildFile; fileRef = E7513B7E16509D8D00B59693 /* <UISwitch> on.png */; };
+		E7513BB016509D8D00B59693 /* <UITabBar> button.png in Resources */ = {isa = PBXBuildFile; fileRef = E7513B7F16509D8D00B59693 /* <UITabBar> button.png */; };
+		E7513BB116509D8D00B59693 /* <UITabBarButtonBadge> background.png in Resources */ = {isa = PBXBuildFile; fileRef = E7513B8016509D8D00B59693 /* <UITabBarButtonBadge> background.png */; };
+		E7513BB216509D8D00B59693 /* <UITabBarButtonImage> highlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = E7513B8116509D8D00B59693 /* <UITabBarButtonImage> highlighted.png */; };
+		E7513BB316509D8D00B59693 /* <UITableView> groupTableViewBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = E7513B8216509D8D00B59693 /* <UITableView> groupTableViewBackground.png */; };
+		E7513BB416509D8D00B59693 /* <UITableView> selection.png in Resources */ = {isa = PBXBuildFile; fileRef = E7513B8316509D8D00B59693 /* <UITableView> selection.png */; };
+		E7513BB516509D8D00B59693 /* <UITableView> selectionGray.png in Resources */ = {isa = PBXBuildFile; fileRef = E7513B8416509D8D00B59693 /* <UITableView> selectionGray.png */; };
+		E7513BB616509D8D00B59693 /* <UITableView> selectionGrayBlue.png in Resources */ = {isa = PBXBuildFile; fileRef = E7513B8516509D8D00B59693 /* <UITableView> selectionGrayBlue.png */; };
+		E7513BB716509D8D00B59693 /* <UITableViewCell> accessoryCheckmark.png in Resources */ = {isa = PBXBuildFile; fileRef = E7513B8616509D8D00B59693 /* <UITableViewCell> accessoryCheckmark.png */; };
+		E7513BB816509D8D00B59693 /* <UITableViewCell> accessoryCheckmarkHighlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = E7513B8716509D8D00B59693 /* <UITableViewCell> accessoryCheckmarkHighlighted.png */; };
+		E7513BB916509D8D00B59693 /* <UITableViewCell> accessoryDisclosureIndicator.png in Resources */ = {isa = PBXBuildFile; fileRef = E7513B8816509D8D00B59693 /* <UITableViewCell> accessoryDisclosureIndicator.png */; };
+		E7513BBA16509D8D00B59693 /* <UITableViewCell> accessoryDisclosureIndicatorHighlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = E7513B8916509D8D00B59693 /* <UITableViewCell> accessoryDisclosureIndicatorHighlighted.png */; };
+		E7513BBB16509D8D00B59693 /* <UITextField> roundedRectBackgroundImage.png in Resources */ = {isa = PBXBuildFile; fileRef = E7513B8A16509D8D00B59693 /* <UITextField> roundedRectBackgroundImage.png */; };
 		FAEF437F163193E3008AA63E /* UINib.h in Headers */ = {isa = PBXBuildFile; fileRef = FAEF437D163193E3008AA63E /* UINib.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FAEF4380163193E3008AA63E /* UINib.m in Sources */ = {isa = PBXBuildFile; fileRef = FAEF437E163193E3008AA63E /* UINib.m */; };
 /* End PBXBuildFile section */
@@ -597,6 +646,55 @@
 		78D533DC133A9434006F17CA /* UISearchDisplayController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UISearchDisplayController.m; sourceTree = "<group>"; };
 		8DC2EF5A0486A6940098B216 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8DC2EF5B0486A6940098B216 /* UIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E7513B5A16509D8D00B59693 /* <UIBarButtonItemStyleDone> hi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "<UIBarButtonItemStyleDone> hi.png"; path = "Resources/<UIBarButtonItemStyleDone> hi.png"; sourceTree = "<group>"; };
+		E7513B5B16509D8D00B59693 /* <UIBarButtonItemStyleDone>.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "<UIBarButtonItemStyleDone>.png"; path = "Resources/<UIBarButtonItemStyleDone>.png"; sourceTree = "<group>"; };
+		E7513B5C16509D8D00B59693 /* <UIBarButtonItemStylePlain> hi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "<UIBarButtonItemStylePlain> hi.png"; path = "Resources/<UIBarButtonItemStylePlain> hi.png"; sourceTree = "<group>"; };
+		E7513B5D16509D8D00B59693 /* <UIBarButtonItemStylePlain>.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "<UIBarButtonItemStylePlain>.png"; path = "Resources/<UIBarButtonItemStylePlain>.png"; sourceTree = "<group>"; };
+		E7513B5E16509D8D00B59693 /* <UIBarButtonSystemItem> action.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "<UIBarButtonSystemItem> action.png"; path = "Resources/<UIBarButtonSystemItem> action.png"; sourceTree = "<group>"; };
+		E7513B5F16509D8D00B59693 /* <UIBarButtonSystemItem> bookmarks.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "<UIBarButtonSystemItem> bookmarks.png"; path = "Resources/<UIBarButtonSystemItem> bookmarks.png"; sourceTree = "<group>"; };
+		E7513B6016509D8D00B59693 /* <UIBarButtonSystemItem> camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "<UIBarButtonSystemItem> camera.png"; path = "Resources/<UIBarButtonSystemItem> camera.png"; sourceTree = "<group>"; };
+		E7513B6116509D8D00B59693 /* <UIBarButtonSystemItem> compose.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "<UIBarButtonSystemItem> compose.png"; path = "Resources/<UIBarButtonSystemItem> compose.png"; sourceTree = "<group>"; };
+		E7513B6216509D8D00B59693 /* <UIBarButtonSystemItem> fastforward.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "<UIBarButtonSystemItem> fastforward.png"; path = "Resources/<UIBarButtonSystemItem> fastforward.png"; sourceTree = "<group>"; };
+		E7513B6316509D8D00B59693 /* <UIBarButtonSystemItem> organize.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "<UIBarButtonSystemItem> organize.png"; path = "Resources/<UIBarButtonSystemItem> organize.png"; sourceTree = "<group>"; };
+		E7513B6416509D8D00B59693 /* <UIBarButtonSystemItem> pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "<UIBarButtonSystemItem> pause.png"; path = "Resources/<UIBarButtonSystemItem> pause.png"; sourceTree = "<group>"; };
+		E7513B6516509D8D00B59693 /* <UIBarButtonSystemItem> play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "<UIBarButtonSystemItem> play.png"; path = "Resources/<UIBarButtonSystemItem> play.png"; sourceTree = "<group>"; };
+		E7513B6616509D8D00B59693 /* <UIBarButtonSystemItem> refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "<UIBarButtonSystemItem> refresh.png"; path = "Resources/<UIBarButtonSystemItem> refresh.png"; sourceTree = "<group>"; };
+		E7513B6716509D8D00B59693 /* <UIBarButtonSystemItem> rewind.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "<UIBarButtonSystemItem> rewind.png"; path = "Resources/<UIBarButtonSystemItem> rewind.png"; sourceTree = "<group>"; };
+		E7513B6816509D8D00B59693 /* <UIBarButtonSystemItem> search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "<UIBarButtonSystemItem> search.png"; path = "Resources/<UIBarButtonSystemItem> search.png"; sourceTree = "<group>"; };
+		E7513B6916509D8D00B59693 /* <UIBarButtonSystemItem> stop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "<UIBarButtonSystemItem> stop.png"; path = "Resources/<UIBarButtonSystemItem> stop.png"; sourceTree = "<group>"; };
+		E7513B6A16509D8D00B59693 /* <UIBarButtonSystemItem> trash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "<UIBarButtonSystemItem> trash.png"; path = "Resources/<UIBarButtonSystemItem> trash.png"; sourceTree = "<group>"; };
+		E7513B6B16509D8D00B59693 /* <UIButton> detailDisclosureButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "<UIButton> detailDisclosureButton.png"; path = "Resources/<UIButton> detailDisclosureButton.png"; sourceTree = "<group>"; };
+		E7513B6C16509D8D00B59693 /* <UIButton> detailDisclosureButtonPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "<UIButton> detailDisclosureButtonPressed.png"; path = "Resources/<UIButton> detailDisclosureButtonPressed.png"; sourceTree = "<group>"; };
+		E7513B6D16509D8D00B59693 /* <UINavigationBarBackground> blackOpaque.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "<UINavigationBarBackground> blackOpaque.png"; path = "Resources/<UINavigationBarBackground> blackOpaque.png"; sourceTree = "<group>"; };
+		E7513B6E16509D8D00B59693 /* <UINavigationBarBackground> blackTranslucent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "<UINavigationBarBackground> blackTranslucent.png"; path = "Resources/<UINavigationBarBackground> blackTranslucent.png"; sourceTree = "<group>"; };
+		E7513B6F16509D8D00B59693 /* <UINavigationBarBackground> default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "<UINavigationBarBackground> default.png"; path = "Resources/<UINavigationBarBackground> default.png"; sourceTree = "<group>"; };
+		E7513B7016509D8D00B59693 /* <UIPopoverView> lion-arrow-bottom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "<UIPopoverView> lion-arrow-bottom.png"; path = "Resources/<UIPopoverView> lion-arrow-bottom.png"; sourceTree = "<group>"; };
+		E7513B7116509D8D00B59693 /* <UIPopoverView> lion-arrow-left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "<UIPopoverView> lion-arrow-left.png"; path = "Resources/<UIPopoverView> lion-arrow-left.png"; sourceTree = "<group>"; };
+		E7513B7216509D8D00B59693 /* <UIPopoverView> lion-arrow-right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "<UIPopoverView> lion-arrow-right.png"; path = "Resources/<UIPopoverView> lion-arrow-right.png"; sourceTree = "<group>"; };
+		E7513B7316509D8D00B59693 /* <UIPopoverView> lion-arrow-top.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "<UIPopoverView> lion-arrow-top.png"; path = "Resources/<UIPopoverView> lion-arrow-top.png"; sourceTree = "<group>"; };
+		E7513B7416509D8D00B59693 /* <UIPopoverView> lion-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "<UIPopoverView> lion-background.png"; path = "Resources/<UIPopoverView> lion-background.png"; sourceTree = "<group>"; };
+		E7513B7516509D8D00B59693 /* <UISearchBar> search-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "<UISearchBar> search-icon.png"; path = "Resources/<UISearchBar> search-icon.png"; sourceTree = "<group>"; };
+		E7513B7616509D8D00B59693 /* <UISegmentedControl> button-highlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "<UISegmentedControl> button-highlighted.png"; path = "Resources/<UISegmentedControl> button-highlighted.png"; sourceTree = "<group>"; };
+		E7513B7716509D8D00B59693 /* <UISegmentedControl> button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "<UISegmentedControl> button.png"; path = "Resources/<UISegmentedControl> button.png"; sourceTree = "<group>"; };
+		E7513B7816509D8D00B59693 /* <UISegmentedControl> divider-highlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "<UISegmentedControl> divider-highlighted.png"; path = "Resources/<UISegmentedControl> divider-highlighted.png"; sourceTree = "<group>"; };
+		E7513B7916509D8D00B59693 /* <UISegmentedControl> divider.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "<UISegmentedControl> divider.png"; path = "Resources/<UISegmentedControl> divider.png"; sourceTree = "<group>"; };
+		E7513B7A16509D8D00B59693 /* <UISlider> maximumTrack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "<UISlider> maximumTrack.png"; path = "Resources/<UISlider> maximumTrack.png"; sourceTree = "<group>"; };
+		E7513B7B16509D8D00B59693 /* <UISlider> minimumTrack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "<UISlider> minimumTrack.png"; path = "Resources/<UISlider> minimumTrack.png"; sourceTree = "<group>"; };
+		E7513B7C16509D8D00B59693 /* <UISlider> thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "<UISlider> thumb.png"; path = "Resources/<UISlider> thumb.png"; sourceTree = "<group>"; };
+		E7513B7D16509D8D00B59693 /* <UISwitch> off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "<UISwitch> off.png"; path = "Resources/<UISwitch> off.png"; sourceTree = "<group>"; };
+		E7513B7E16509D8D00B59693 /* <UISwitch> on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "<UISwitch> on.png"; path = "Resources/<UISwitch> on.png"; sourceTree = "<group>"; };
+		E7513B7F16509D8D00B59693 /* <UITabBar> button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "<UITabBar> button.png"; path = "Resources/<UITabBar> button.png"; sourceTree = "<group>"; };
+		E7513B8016509D8D00B59693 /* <UITabBarButtonBadge> background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "<UITabBarButtonBadge> background.png"; path = "Resources/<UITabBarButtonBadge> background.png"; sourceTree = "<group>"; };
+		E7513B8116509D8D00B59693 /* <UITabBarButtonImage> highlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "<UITabBarButtonImage> highlighted.png"; path = "Resources/<UITabBarButtonImage> highlighted.png"; sourceTree = "<group>"; };
+		E7513B8216509D8D00B59693 /* <UITableView> groupTableViewBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "<UITableView> groupTableViewBackground.png"; path = "Resources/<UITableView> groupTableViewBackground.png"; sourceTree = "<group>"; };
+		E7513B8316509D8D00B59693 /* <UITableView> selection.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "<UITableView> selection.png"; path = "Resources/<UITableView> selection.png"; sourceTree = "<group>"; };
+		E7513B8416509D8D00B59693 /* <UITableView> selectionGray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "<UITableView> selectionGray.png"; path = "Resources/<UITableView> selectionGray.png"; sourceTree = "<group>"; };
+		E7513B8516509D8D00B59693 /* <UITableView> selectionGrayBlue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "<UITableView> selectionGrayBlue.png"; path = "Resources/<UITableView> selectionGrayBlue.png"; sourceTree = "<group>"; };
+		E7513B8616509D8D00B59693 /* <UITableViewCell> accessoryCheckmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "<UITableViewCell> accessoryCheckmark.png"; path = "Resources/<UITableViewCell> accessoryCheckmark.png"; sourceTree = "<group>"; };
+		E7513B8716509D8D00B59693 /* <UITableViewCell> accessoryCheckmarkHighlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "<UITableViewCell> accessoryCheckmarkHighlighted.png"; path = "Resources/<UITableViewCell> accessoryCheckmarkHighlighted.png"; sourceTree = "<group>"; };
+		E7513B8816509D8D00B59693 /* <UITableViewCell> accessoryDisclosureIndicator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "<UITableViewCell> accessoryDisclosureIndicator.png"; path = "Resources/<UITableViewCell> accessoryDisclosureIndicator.png"; sourceTree = "<group>"; };
+		E7513B8916509D8D00B59693 /* <UITableViewCell> accessoryDisclosureIndicatorHighlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "<UITableViewCell> accessoryDisclosureIndicatorHighlighted.png"; path = "Resources/<UITableViewCell> accessoryDisclosureIndicatorHighlighted.png"; sourceTree = "<group>"; };
+		E7513B8A16509D8D00B59693 /* <UITextField> roundedRectBackgroundImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "<UITextField> roundedRectBackgroundImage.png"; path = "Resources/<UITextField> roundedRectBackgroundImage.png"; sourceTree = "<group>"; };
 		FAEF437D163193E3008AA63E /* UINib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UINib.h; sourceTree = "<group>"; };
 		FAEF437E163193E3008AA63E /* UINib.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UINib.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -658,6 +756,55 @@
 		089C1665FE841158C02AAC07 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E7513B5A16509D8D00B59693 /* <UIBarButtonItemStyleDone> hi.png */,
+				E7513B5B16509D8D00B59693 /* <UIBarButtonItemStyleDone>.png */,
+				E7513B5C16509D8D00B59693 /* <UIBarButtonItemStylePlain> hi.png */,
+				E7513B5D16509D8D00B59693 /* <UIBarButtonItemStylePlain>.png */,
+				E7513B5E16509D8D00B59693 /* <UIBarButtonSystemItem> action.png */,
+				E7513B5F16509D8D00B59693 /* <UIBarButtonSystemItem> bookmarks.png */,
+				E7513B6016509D8D00B59693 /* <UIBarButtonSystemItem> camera.png */,
+				E7513B6116509D8D00B59693 /* <UIBarButtonSystemItem> compose.png */,
+				E7513B6216509D8D00B59693 /* <UIBarButtonSystemItem> fastforward.png */,
+				E7513B6316509D8D00B59693 /* <UIBarButtonSystemItem> organize.png */,
+				E7513B6416509D8D00B59693 /* <UIBarButtonSystemItem> pause.png */,
+				E7513B6516509D8D00B59693 /* <UIBarButtonSystemItem> play.png */,
+				E7513B6616509D8D00B59693 /* <UIBarButtonSystemItem> refresh.png */,
+				E7513B6716509D8D00B59693 /* <UIBarButtonSystemItem> rewind.png */,
+				E7513B6816509D8D00B59693 /* <UIBarButtonSystemItem> search.png */,
+				E7513B6916509D8D00B59693 /* <UIBarButtonSystemItem> stop.png */,
+				E7513B6A16509D8D00B59693 /* <UIBarButtonSystemItem> trash.png */,
+				E7513B6B16509D8D00B59693 /* <UIButton> detailDisclosureButton.png */,
+				E7513B6C16509D8D00B59693 /* <UIButton> detailDisclosureButtonPressed.png */,
+				E7513B6D16509D8D00B59693 /* <UINavigationBarBackground> blackOpaque.png */,
+				E7513B6E16509D8D00B59693 /* <UINavigationBarBackground> blackTranslucent.png */,
+				E7513B6F16509D8D00B59693 /* <UINavigationBarBackground> default.png */,
+				E7513B7016509D8D00B59693 /* <UIPopoverView> lion-arrow-bottom.png */,
+				E7513B7116509D8D00B59693 /* <UIPopoverView> lion-arrow-left.png */,
+				E7513B7216509D8D00B59693 /* <UIPopoverView> lion-arrow-right.png */,
+				E7513B7316509D8D00B59693 /* <UIPopoverView> lion-arrow-top.png */,
+				E7513B7416509D8D00B59693 /* <UIPopoverView> lion-background.png */,
+				E7513B7516509D8D00B59693 /* <UISearchBar> search-icon.png */,
+				E7513B7616509D8D00B59693 /* <UISegmentedControl> button-highlighted.png */,
+				E7513B7716509D8D00B59693 /* <UISegmentedControl> button.png */,
+				E7513B7816509D8D00B59693 /* <UISegmentedControl> divider-highlighted.png */,
+				E7513B7916509D8D00B59693 /* <UISegmentedControl> divider.png */,
+				E7513B7A16509D8D00B59693 /* <UISlider> maximumTrack.png */,
+				E7513B7B16509D8D00B59693 /* <UISlider> minimumTrack.png */,
+				E7513B7C16509D8D00B59693 /* <UISlider> thumb.png */,
+				E7513B7D16509D8D00B59693 /* <UISwitch> off.png */,
+				E7513B7E16509D8D00B59693 /* <UISwitch> on.png */,
+				E7513B7F16509D8D00B59693 /* <UITabBar> button.png */,
+				E7513B8016509D8D00B59693 /* <UITabBarButtonBadge> background.png */,
+				E7513B8116509D8D00B59693 /* <UITabBarButtonImage> highlighted.png */,
+				E7513B8216509D8D00B59693 /* <UITableView> groupTableViewBackground.png */,
+				E7513B8316509D8D00B59693 /* <UITableView> selection.png */,
+				E7513B8416509D8D00B59693 /* <UITableView> selectionGray.png */,
+				E7513B8516509D8D00B59693 /* <UITableView> selectionGrayBlue.png */,
+				E7513B8616509D8D00B59693 /* <UITableViewCell> accessoryCheckmark.png */,
+				E7513B8716509D8D00B59693 /* <UITableViewCell> accessoryCheckmarkHighlighted.png */,
+				E7513B8816509D8D00B59693 /* <UITableViewCell> accessoryDisclosureIndicator.png */,
+				E7513B8916509D8D00B59693 /* <UITableViewCell> accessoryDisclosureIndicatorHighlighted.png */,
+				E7513B8A16509D8D00B59693 /* <UITextField> roundedRectBackgroundImage.png */,
 				14F0BC0B1288A67F00BA54F9 /* <UIBarButtonSystemItem> add.png */,
 				148DEE88156E945800E7B8DE /* <UIBarButtonSystemItem> add@2x.png */,
 				14F0BC0C1288A67F00BA54F9 /* <UIBarButtonSystemItem> reply.png */,
@@ -1219,6 +1366,55 @@
 				1426A02515701598004C2C9A /* <UIPopoverView> arrow-left@2x.png in Resources */,
 				1426A02615701598004C2C9A /* <UIPopoverView> arrow-right@2x.png in Resources */,
 				1426A02715701598004C2C9A /* <UIPopoverView> arrow-top@2x.png in Resources */,
+				E7513B8B16509D8D00B59693 /* <UIBarButtonItemStyleDone> hi.png in Resources */,
+				E7513B8C16509D8D00B59693 /* <UIBarButtonItemStyleDone>.png in Resources */,
+				E7513B8D16509D8D00B59693 /* <UIBarButtonItemStylePlain> hi.png in Resources */,
+				E7513B8E16509D8D00B59693 /* <UIBarButtonItemStylePlain>.png in Resources */,
+				E7513B8F16509D8D00B59693 /* <UIBarButtonSystemItem> action.png in Resources */,
+				E7513B9016509D8D00B59693 /* <UIBarButtonSystemItem> bookmarks.png in Resources */,
+				E7513B9116509D8D00B59693 /* <UIBarButtonSystemItem> camera.png in Resources */,
+				E7513B9216509D8D00B59693 /* <UIBarButtonSystemItem> compose.png in Resources */,
+				E7513B9316509D8D00B59693 /* <UIBarButtonSystemItem> fastforward.png in Resources */,
+				E7513B9416509D8D00B59693 /* <UIBarButtonSystemItem> organize.png in Resources */,
+				E7513B9516509D8D00B59693 /* <UIBarButtonSystemItem> pause.png in Resources */,
+				E7513B9616509D8D00B59693 /* <UIBarButtonSystemItem> play.png in Resources */,
+				E7513B9716509D8D00B59693 /* <UIBarButtonSystemItem> refresh.png in Resources */,
+				E7513B9816509D8D00B59693 /* <UIBarButtonSystemItem> rewind.png in Resources */,
+				E7513B9916509D8D00B59693 /* <UIBarButtonSystemItem> search.png in Resources */,
+				E7513B9A16509D8D00B59693 /* <UIBarButtonSystemItem> stop.png in Resources */,
+				E7513B9B16509D8D00B59693 /* <UIBarButtonSystemItem> trash.png in Resources */,
+				E7513B9C16509D8D00B59693 /* <UIButton> detailDisclosureButton.png in Resources */,
+				E7513B9D16509D8D00B59693 /* <UIButton> detailDisclosureButtonPressed.png in Resources */,
+				E7513B9E16509D8D00B59693 /* <UINavigationBarBackground> blackOpaque.png in Resources */,
+				E7513B9F16509D8D00B59693 /* <UINavigationBarBackground> blackTranslucent.png in Resources */,
+				E7513BA016509D8D00B59693 /* <UINavigationBarBackground> default.png in Resources */,
+				E7513BA116509D8D00B59693 /* <UIPopoverView> lion-arrow-bottom.png in Resources */,
+				E7513BA216509D8D00B59693 /* <UIPopoverView> lion-arrow-left.png in Resources */,
+				E7513BA316509D8D00B59693 /* <UIPopoverView> lion-arrow-right.png in Resources */,
+				E7513BA416509D8D00B59693 /* <UIPopoverView> lion-arrow-top.png in Resources */,
+				E7513BA516509D8D00B59693 /* <UIPopoverView> lion-background.png in Resources */,
+				E7513BA616509D8D00B59693 /* <UISearchBar> search-icon.png in Resources */,
+				E7513BA716509D8D00B59693 /* <UISegmentedControl> button-highlighted.png in Resources */,
+				E7513BA816509D8D00B59693 /* <UISegmentedControl> button.png in Resources */,
+				E7513BA916509D8D00B59693 /* <UISegmentedControl> divider-highlighted.png in Resources */,
+				E7513BAA16509D8D00B59693 /* <UISegmentedControl> divider.png in Resources */,
+				E7513BAB16509D8D00B59693 /* <UISlider> maximumTrack.png in Resources */,
+				E7513BAC16509D8D00B59693 /* <UISlider> minimumTrack.png in Resources */,
+				E7513BAD16509D8D00B59693 /* <UISlider> thumb.png in Resources */,
+				E7513BAE16509D8D00B59693 /* <UISwitch> off.png in Resources */,
+				E7513BAF16509D8D00B59693 /* <UISwitch> on.png in Resources */,
+				E7513BB016509D8D00B59693 /* <UITabBar> button.png in Resources */,
+				E7513BB116509D8D00B59693 /* <UITabBarButtonBadge> background.png in Resources */,
+				E7513BB216509D8D00B59693 /* <UITabBarButtonImage> highlighted.png in Resources */,
+				E7513BB316509D8D00B59693 /* <UITableView> groupTableViewBackground.png in Resources */,
+				E7513BB416509D8D00B59693 /* <UITableView> selection.png in Resources */,
+				E7513BB516509D8D00B59693 /* <UITableView> selectionGray.png in Resources */,
+				E7513BB616509D8D00B59693 /* <UITableView> selectionGrayBlue.png in Resources */,
+				E7513BB716509D8D00B59693 /* <UITableViewCell> accessoryCheckmark.png in Resources */,
+				E7513BB816509D8D00B59693 /* <UITableViewCell> accessoryCheckmarkHighlighted.png in Resources */,
+				E7513BB916509D8D00B59693 /* <UITableViewCell> accessoryDisclosureIndicator.png in Resources */,
+				E7513BBA16509D8D00B59693 /* <UITableViewCell> accessoryDisclosureIndicatorHighlighted.png in Resources */,
+				E7513BBB16509D8D00B59693 /* <UITextField> roundedRectBackgroundImage.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
