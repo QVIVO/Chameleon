@@ -43,10 +43,13 @@ typedef NSUInteger UIWebViewNavigationType;
 @class UIWebView, UIViewAdapter, WebView;
 
 @protocol UIWebViewDelegate <NSObject>
+
 @optional
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType;
-- (void)webView:(UIWebView *)aWebView didFailLoadWithError:(NSError *)error;
+- (void)webViewDidStartLoad:(UIWebView *)webView;
 - (void)webViewDidFinishLoad:(UIWebView *)webView;
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error;
+
 @end
 
 @interface UIWebView : UIView {
@@ -62,6 +65,7 @@ typedef NSUInteger UIWebViewNavigationType;
         unsigned shouldStartLoadWithRequest : 1;
         unsigned didFailLoadWithError : 1;
         unsigned didFinishLoad : 1;
+        unsigned didStartLoad : 1;
     } _delegateHas;
 }
 

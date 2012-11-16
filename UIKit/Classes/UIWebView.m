@@ -77,6 +77,7 @@
     _delegateHas.shouldStartLoadWithRequest = [_delegate respondsToSelector:@selector(webView:shouldStartLoadWithRequest:navigationType:)];
     _delegateHas.didFailLoadWithError = [_delegate respondsToSelector:@selector(webView:didFailLoadWithError:)];
     _delegateHas.didFinishLoad = [_delegate respondsToSelector:@selector(webViewDidFinishLoad:)];
+    _delegateHas.didStartLoad = [_delegate respondsToSelector:@selector(webViewDidStartLoad:)];
 }
 
 - (void)loadHTMLString:(NSString *)string baseURL:(NSURL *)baseURL
@@ -201,6 +202,13 @@
     }
 }
 
+- (void)webView:(WebView *)webView didStartProvisionalLoadForFrame:(WebFrame *)frame
+{
+    if (_delegateHas.didStartLoad) {
+        [_delegate webViewDidStartLoad:self];
+    }
+}
+
 #pragma mark -
 #pragma mark WebView UI Delegate
 
@@ -228,5 +236,6 @@
 {
     // DO NOTHING to prevent WebView resize window
 }
+
 
 @end
